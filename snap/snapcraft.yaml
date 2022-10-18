@@ -1,9 +1,9 @@
-name: mesa-core20
-base: core20
+name: mesa-core22
+base: core22
 adopt-info: mesa
 summary: mesa libraries for core20 snaps
 description: |
-  A content snap containing the mesa libraries and drivers for core 20
+  A content snap containing the mesa libraries and drivers for core 22
 compression: lzo
 
 grade: stable
@@ -21,15 +21,17 @@ parts:
   mesa:
     plugin: nil
     override-pull:
-      snapcraftctl set-version `LANG=C apt-cache policy libgl1-mesa-dri | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
+      craftctl set version=`LANG=C apt-cache policy libgl1-mesa-dri | sed -rne 's/^\s+Candidate:\s+([^-]*)-.+$/\1/p'`
     stage-packages:
       - libgl1-mesa-dri
       - va-driver-all
       - libegl1
       - libgles2
+      - libdrm2
+      - libdrm-common
     organize:
-      'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri/*': egl/dri/
-      'usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/*.so*': egl/lib/
+      'usr/lib/${CRAFT_ARCH_TRIPLET}/dri/*': egl/dri/
+      'usr/lib/${CRAFT_ARCH_TRIPLET}/*.so*': egl/lib/
       'usr/share/glvnd': egl/glvnd/
       'usr/share/libdrm': egl/libdrm/
       'usr/share/drirc.d/': egl/drirc.d/
@@ -41,7 +43,7 @@ parts:
       - egl/drirc.d
 
 slots:
-  graphics-core20:
+  graphics-core22:
     interface: content
     read:
       - egl
