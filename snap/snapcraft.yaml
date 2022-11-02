@@ -1,7 +1,7 @@
 name: mesa-core22
 base: core22
 adopt-info: mesa
-summary: mesa libraries for core20 snaps
+summary: mesa libraries for core22 snaps
 description: |
   A content snap containing the mesa libraries and drivers for core 22
 compression: lzo

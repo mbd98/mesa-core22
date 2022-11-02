@@ -1,8 +1,8 @@
-# mesa libraries for core20 snaps
+# mesa libraries for core22 snaps
 
-A content snap providing the mesa userspace libraries and drivers for core20
+A content snap providing the mesa userspace libraries and drivers for core22
 
-This supplies the graphics-core20 content interface:
+This supplies the graphics-core22 content interface:
 
     .../lib contains the mesa shared libraries (add to LD_LIBRARY_PATH)
     .../dri contains the mesa drivers (set LIBGL_DRIVERS_PATH/LIBVA_DRIVERS_PATH to this)
@@ -13,6 +13,6 @@ This supplies the graphics-core20 content interface:
 
 ----
 
-For details of the graphics-core20 content interface see:
+For details of the older graphics-core20 content interface see:
 
 https://discourse.ubuntu.com/t/the-graphics-core20-snap-interface/23000
